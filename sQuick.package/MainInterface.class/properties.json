@@ -23,7 +23,8 @@
 		"updateBtn",
 		"searchHdr",
 		"browse",
-		"browseHdr" ],
+		"browseHdr",
+		"langSelect" ],
 	"name" : "MainInterface",
 	"pools" : [
 		 ],

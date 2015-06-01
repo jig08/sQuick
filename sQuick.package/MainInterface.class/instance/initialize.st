@@ -18,13 +18,23 @@ initialize
 	header := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'header.gif').
 	header position: 150@0.
 	
-	langList := TextMorph new.
+	"langList := TextMorph new.
 	langList newContents: 'Language'.
 	langList borderWidth: 1.
 	langList backgroundColor: Color white.
 	langList position: 300@130.
 	langList height: 50.
-	langList width: 180. 
+	langList width: 180. "
+	
+	langSelect:= DropListMorph new.
+	"langSelect enable: true."
+	langSelect font: font .
+	langSelect selectionColor: Color paleYellow .
+	langSelect list: #( #English #Greek #Chinese).
+	langSelect listSelectionIndex: 1.
+	langSelect position:300@130.
+	langSelect extent: 180@30.
+	
 	
 	searchFor := TextMorphForEditView new.
 	searchFor position: 500@130.
@@ -56,7 +66,7 @@ initialize
 	searchHdr font: font .
 	
 	ptm := PluggableTextMorph new.
-	ptm alwaysShowHScrollBar: true.
+	ptm alwaysShowVScrollBar: true.
 	ptm position: 300@250.
 	ptm extent: 650@250.	
 	txtViewer := ptm textMorph.
@@ -72,7 +82,7 @@ initialize
 	browse addMorph: browseHdr  .		
 		
 	ptm2 := PluggableTextMorph new.
-	ptm2 alwaysShowHScrollBar: true.
+	ptm2 alwaysShowVScrollBar: true.
 	ptm2 position: 300@580.
 	ptm2 extent: 650@120.	
 	txtViewer2 := ptm2 textMorph.
@@ -89,7 +99,8 @@ initialize
 	box extent: (World extent ).
 	box addMorph: title .
 	box addMorph: header.
-	box addMorph: langList .
+	"box addMorph: langList ."
+	box addMorph: langSelect .
 	box addMorph: searchFor .
 	box addMorph: srchBtn.
 	box addMorph: searchHdr .
