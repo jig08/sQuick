@@ -1,0 +1,25 @@
+{
+	"category" : "sQuick-UI",
+	"classinstvars" : [
+		"instance" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"title",
+		"header",
+		"langList",
+		"searchFor",
+		"srchBtn",
+		"mnuTitles",
+		"headerMenu",
+		"ptm",
+		"txtViewer",
+		"updateArea",
+		"viewDoc",
+		"box" ],
+	"name" : "MainInterface",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
