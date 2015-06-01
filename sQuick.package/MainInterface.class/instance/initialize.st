@@ -12,7 +12,7 @@ initialize
 	StandardFonts defaultFont: font .
 	StandardFonts windowTitleFont: font.
 	
-	title := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'rsz_1logo.gif').
+	title := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'rsz_bin.gif').
 	title position: 0@0.
 	header := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'header.gif').
 	header position: 150@0.
@@ -61,9 +61,10 @@ initialize
 	viewDoc := updateArea textMorph.
 	
 	
-	box := Morph new.
-	box color: Color paleOrange  .
-	box extent: (World extent).
+	"box := Morph new.
+	box color: Color paleOrange ."
+	box := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'bg.gif').
+	box extent: (World extent ).
 	box addMorph: title .
 	box addMorph: header.
 	box addMorph: langList .
@@ -73,3 +74,4 @@ initialize
 	box addMorph: mnuTitles.
 	box addMorph: updateArea .
 	box openInWindow .
+	
