@@ -14,6 +14,7 @@ initialize
 	
 	title := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'rsz_bin.gif').
 	title position: 0@0.
+	
 	header := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'header.gif').
 	header position: 150@0.
 	
@@ -22,7 +23,7 @@ initialize
 	langList borderWidth: 1.
 	langList backgroundColor: Color white.
 	langList position: 300@130.
-	langList  height: 50.
+	langList height: 50.
 	langList width: 180. 
 	
 	searchFor := TextMorphForEditView new.
@@ -48,17 +49,38 @@ initialize
 	headerMenu extent: 175@50.
 	mnuTitles addMorph: headerMenu .	
 	
+	searchHdr := TextMorph new.
+	searchHdr newContents: 'Search Results : '.
+	searchHdr position: 300@200.
+	searchHdr extent: 175@50.
+	searchHdr font: font .
+	
 	ptm := PluggableTextMorph new.
 	ptm alwaysShowHScrollBar: true.
-	ptm position: 300@200.
-	ptm extent: 650@300.	
-	txtViewer := ptm textMorph.	
+	ptm position: 300@250.
+	ptm extent: 650@250.	
+	txtViewer := ptm textMorph.
+	
+	browse := MenuMorph new.
+	browse stayUp: true.
+	browse position: 50@520.
+	browse extent: 400@1000.	
+	
+	browseHdr := TextMorph new.
+	browseHdr newContents: 'Browse'.
+	browseHdr extent: 175@50.
+	browse addMorph: browseHdr  .		
 		
-	updateArea := PluggableTextMorph new.
-	updateArea alwaysShowVScrollBar: true.
-	updateArea position: 300@1000.
-	updateArea extent: 650@200.
-	viewDoc := updateArea textMorph.
+	ptm2 := PluggableTextMorph new.
+	ptm2 alwaysShowHScrollBar: true.
+	ptm2 position: 300@580.
+	ptm2 extent: 650@120.	
+	txtViewer2 := ptm2 textMorph.
+	
+	updateBtn := SimpleButtonMorph newWithLabel: 'Update'.
+	updateBtn color: Color paleGreen .
+	updateBtn position: 1000@580.
+	updateBtn extent: 100@50.
 	
 	
 	"box := Morph new.
@@ -70,8 +92,11 @@ initialize
 	box addMorph: langList .
 	box addMorph: searchFor .
 	box addMorph: srchBtn.
+	box addMorph: searchHdr .
 	box addMorph: ptm.
 	box addMorph: mnuTitles.
-	box addMorph: updateArea .
+	box addMorph: browse .
+	box addMorph: ptm2 .
+	box addMorph: updateBtn .
 	box openInWindow .
 	
