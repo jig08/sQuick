@@ -1,15 +1,14 @@
 {
-	"category" : "sQuick-accessingFiles",
+	"category" : "sQuick-UI",
 	"classinstvars" : [
 		 ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"title",
-		"content" ],
-	"name" : "Chapter",
+		 ],
+	"name" : "MyMenu",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "MenuMorph",
 	"type" : "normal" }

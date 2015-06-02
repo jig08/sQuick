@@ -1,3 +1,6 @@
 as yet unclassified
 delete
-	instance := nil.
+	(instance isNil) ifFalse: [
+		instance delete.
+		instance := nil.
+	]

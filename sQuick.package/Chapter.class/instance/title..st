@@ -1,3 +1,3 @@
-accessing
-title: anObject
-	title := anObject
+as yet unclassified
+title: t
+	title := t.

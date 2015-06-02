@@ -1,3 +1,3 @@
 SystemOrganization addCategory: #sQuick!
-SystemOrganization addCategory: 'sQuick-AccessingFiles'!
 SystemOrganization addCategory: 'sQuick-UI'!
+SystemOrganization addCategory: 'sQuick-accessingFiles'!

@@ -78,7 +78,7 @@ initialize
 	
 	browse := MenuMorph new.
 	browse stayUp: true.
-	browse position: 50@460.
+	browse position: 50@300.
 	browse extent: 400@1000.	
 	
 	browseHdr := TextMorph new.
@@ -108,33 +108,33 @@ initialize
 	updateBtn position: 1000@520.
 	updateBtn extent: 100@50.
 	
-	"----------------------------------------------------------------------------------------------"
+	
+	"---------------------------------------------------------"
 	
 	Chapter clear.
-	MenuItem clear.
-	
-	"(Chapter new) title: 'WELCOME';content: 'Welcome to Text Viewer. Developed in Pharo 4.0.'. "
-	"(Chapter new) title: 'Chapter 2';content: 'Long Live Free software foundation!!'."
-	((FileLocator workingDirectory / 'Documents') allFiles) sort do: [ :f|
+	MyMenuItem clear.
+		
+	((FileLocator workingDirectory / 'document') allFiles) sort do: [ :f|
 		|d|
 		d := Document new.
 		d openWithFile: f.
 		d title: (f basenameWithoutExtension ). ].
+	
 	Chapter allSubInstances size > 0 ifTrue: [
 		1 to: (Chapter allSubInstances size) do: [ :index |
 			|chapter item|
 			chapter := Chapter at: index.
-			item := MenuItem new chapter: chapter.
-			browse addMenuItem: item.
+			item := MyMenuItem new chapter: chapter.
+			browse  addMenuItem: item.
 		].
 	].
 
-	Document instances do: [ :chapter |
+	"Document instances do: [ :chapter |
 		|item|
-		item := MenuItem new chapter: chapter.
-		browse  addMenuItem: item. ].
+		item := MyMenuItem new chapter: chapter.
+		mnuTitles addMenuItem: item. ]."
 	
-	"-----------------------------------------------------------------------------------------------"
+	"---------------------------------------------------------"
 	
 	
 	"box := Morph new.

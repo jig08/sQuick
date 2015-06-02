@@ -1,3 +1,3 @@
-accessing
-content: anObject
-	content := anObject
+as yet unclassified
+content: c
+	content := c.

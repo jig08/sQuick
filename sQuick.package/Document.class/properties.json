@@ -1,12 +1,12 @@
 {
-	"category" : "sQuick-AccessingFiles",
+	"category" : "sQuick-accessingFiles",
 	"classinstvars" : [
 		"instances" ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"f" ],
 	"name" : "Document",
 	"pools" : [
 		 ],
