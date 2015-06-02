@@ -11,9 +11,4 @@ UI build in progress.
 
 DoIt 'MainInterface startUp' in Playground/Workspcae to check it out.
 
-# Project
-
-Google Summer Of Code 2015
-
-Fossasia
 
