@@ -24,7 +24,8 @@
 		"searchHdr",
 		"browse",
 		"browseHdr",
-		"langSelect" ],
+		"langSelect",
+		"contentHdr" ],
 	"name" : "MainInterface",
 	"pools" : [
 		 ],

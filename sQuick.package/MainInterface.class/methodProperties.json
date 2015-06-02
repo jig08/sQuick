@@ -2,8 +2,10 @@
 	"class" : {
 		"delete" : "j 6/1/2015 11:17",
 		"instance" : "j 6/1/2015 11:16",
+		"readFiles" : "jigyasagrover 6/2/2015 16:28",
 		"run" : "j 6/1/2015 11:18",
 		"startUp" : "j 6/1/2015 11:18" },
 	"instance" : {
-		"initialize" : "jigyasa 6/2/2015 02:09",
-		"initializePresenter" : "jigyasa 6/1/2015 15:50" } }
+		"initialize" : "jigyasagrover 6/2/2015 16:33",
+		"menu" : "jigyasagrover 6/2/2015 16:31",
+		"viewer" : "jigyasagrover 6/2/2015 16:31" } }

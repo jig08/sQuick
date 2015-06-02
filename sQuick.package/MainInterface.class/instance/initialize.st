@@ -29,8 +29,8 @@ initialize
 	langSelect:= DropListMorph new.
 	"langSelect enable: true."
 	langSelect font: font .
-	langSelect selectionColor: Color paleYellow .
-	langSelect list: #( #English #Greek #Chinese).
+	langSelect selectionColor: Color yellow .
+	langSelect list: #( #English #Greek #Chinese #French #Spanish #German #Japanese #Hindi).
 	langSelect listSelectionIndex: 1.
 	langSelect position:300@130.
 	langSelect extent: 180@30.
@@ -45,7 +45,11 @@ initialize
 	searchFor backgroundColor: Color white .	
 	
 	srchBtn := SimpleButtonMorph newWithLabel: 'Search'.
-	srchBtn color: Color paleGreen .
+	srchBtn color: Color paleTan .
+	srchBtn borderColor: Color brown .
+	srchBtn borderWidth: 3.
+	srchBtn helpText: 'Click to search'.
+	srchBtn roundedCorners: 4 .
 	srchBtn position: 1000@120.
 	srchBtn extent: 100@50.
 	
@@ -56,6 +60,7 @@ initialize
 	
 	headerMenu := TextMorph new.
 	headerMenu newContents: 'Recent Files'.
+	headerMenu backgroundColor: Color paleBlue .
 	headerMenu extent: 175@50.
 	mnuTitles addMorph: headerMenu .	
 	
@@ -68,29 +73,68 @@ initialize
 	ptm := PluggableTextMorph new.
 	ptm alwaysShowVScrollBar: true.
 	ptm position: 300@250.
-	ptm extent: 650@250.	
+	ptm extent: 650@175.	
 	txtViewer := ptm textMorph.
 	
 	browse := MenuMorph new.
 	browse stayUp: true.
-	browse position: 50@520.
+	browse position: 50@460.
 	browse extent: 400@1000.	
 	
 	browseHdr := TextMorph new.
 	browseHdr newContents: 'Browse'.
+	browseHdr backgroundColor: Color paleBlue .
 	browseHdr extent: 175@50.
-	browse addMorph: browseHdr  .		
+	browse addMorph: browseHdr  .	
+		
+	contentHdr := TextMorph new.
+	contentHdr newContents: 'Contents of the selected file:'.
+	contentHdr position: 300@470.
+	contentHdr extent: 250@50.
+	contentHdr font: font .	
 		
 	ptm2 := PluggableTextMorph new.
 	ptm2 alwaysShowVScrollBar: true.
-	ptm2 position: 300@580.
+	ptm2 position: 300@520.
 	ptm2 extent: 650@120.	
 	txtViewer2 := ptm2 textMorph.
 	
 	updateBtn := SimpleButtonMorph newWithLabel: 'Update'.
-	updateBtn color: Color paleGreen .
-	updateBtn position: 1000@580.
+	updateBtn color: Color paleTan .
+	updateBtn borderColor: Color brown .
+	updateBtn borderWidth: 3.
+	updateBtn helpText: 'Click to update the text'.
+	updateBtn roundedCorners: 4 .
+	updateBtn position: 1000@520.
 	updateBtn extent: 100@50.
+	
+	"----------------------------------------------------------------------------------------------"
+	
+	Chapter clear.
+	MenuItem clear.
+	
+	"(Chapter new) title: 'WELCOME';content: 'Welcome to Text Viewer. Developed in Pharo 4.0.'. "
+	"(Chapter new) title: 'Chapter 2';content: 'Long Live Free software foundation!!'."
+	((FileLocator workingDirectory / 'Documents') allFiles) sort do: [ :f|
+		|d|
+		d := Document new.
+		d openWithFile: f.
+		d title: (f basenameWithoutExtension ). ].
+	Chapter allSubInstances size > 0 ifTrue: [
+		1 to: (Chapter allSubInstances size) do: [ :index |
+			|chapter item|
+			chapter := Chapter at: index.
+			item := MenuItem new chapter: chapter.
+			browse addMenuItem: item.
+		].
+	].
+
+	Document instances do: [ :chapter |
+		|item|
+		item := MenuItem new chapter: chapter.
+		browse  addMenuItem: item. ].
+	
+	"-----------------------------------------------------------------------------------------------"
 	
 	
 	"box := Morph new.
@@ -107,6 +151,7 @@ initialize
 	box addMorph: ptm.
 	box addMorph: mnuTitles.
 	box addMorph: browse .
+	box addMorph: contentHdr .
 	box addMorph: ptm2 .
 	box addMorph: updateBtn .
 	box openInWindow .

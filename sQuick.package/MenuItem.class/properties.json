@@ -1,0 +1,14 @@
+{
+	"category" : "sQuick-UI",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"chapter" ],
+	"name" : "MenuItem",
+	"pools" : [
+		 ],
+	"super" : "MenuItemMorph",
+	"type" : "normal" }
