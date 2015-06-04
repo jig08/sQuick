@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfsQuick",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfsQuick",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
