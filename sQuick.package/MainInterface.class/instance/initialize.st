@@ -1,8 +1,8 @@
 as yet unclassified
 initialize
 
-	| font |
-	
+	| font resourceFolder |
+	resourceFolder := FileSystem workingDirectory / 'sQuick' / 'resources'.
 	font := LogicalFont familyName: 'WenQuanYi Micro Hei' pointSize: 12.
 	
 	StandardFonts listFont: font .
@@ -12,10 +12,10 @@ initialize
 	StandardFonts defaultFont: font .
 	StandardFonts windowTitleFont: font.
 	
-	title := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'rsz_bin.gif').
+	title := ImageMorph withForm: (Form fromFileNamed: resourceFolder / 'rsz_bin.gif').
 	title position: 0@0.
 	
-	header := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'header.gif').
+	header := ImageMorph withForm: (Form fromFileNamed: resourceFolder / 'header.gif').
 	header position: 150@0.
 	
 	"langList := TextMorph new.
@@ -114,11 +114,10 @@ initialize
 	Chapter clear.
 	MyMenuItem clear.
 		
-	((FileLocator workingDirectory / 'document') allFiles) sort do: [ :f|
-		|d|
-		d := Document new.
-		d openWithFile: f.
-		d title: (f basenameWithoutExtension ). ].
+	(resourceFolder / 'document') allFiles sort do: [ :f |
+		Document new
+			openWithFile: f;
+			title: f basenameWithoutExtension ].
 	
 	Chapter allSubInstances size > 0 ifTrue: [
 		1 to: (Chapter allSubInstances size) do: [ :index |
@@ -139,7 +138,7 @@ initialize
 	
 	"box := Morph new.
 	box color: Color paleOrange ."
-	box := ImageMorph withForm: (Form fromFileNamed: FileSystem workingDirectory /'bg.gif').
+	box := ImageMorph withForm: (Form fromFileNamed: resourceFolder / 'bg.gif').
 	box extent: (World extent ).
 	box addMorph: title .
 	box addMorph: header.
