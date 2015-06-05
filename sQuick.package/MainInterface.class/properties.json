@@ -22,7 +22,8 @@
 		"ptm2",
 		"txtViewer2",
 		"updateBtn",
-		"box" ],
+		"box",
+		"contentBox" ],
 	"name" : "MainInterface",
 	"pools" : [
 		 ],
