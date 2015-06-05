@@ -123,7 +123,9 @@ initialize
 		1 to: (Chapter allSubInstances size) do: [ :index |
 			|chapter item|
 			chapter := Chapter at: index.
-			item := MyMenuItem new chapter: chapter.
+			item := MyMenuItem new chapter: chapter. 
+			item mainInterface: self.
+			"item := MyMenuItem new chapter: chapter."
 			browse  addMenuItem: item.
 		].
 	].
