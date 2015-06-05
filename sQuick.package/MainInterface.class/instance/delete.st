@@ -16,4 +16,5 @@ delete
 	mnuTitles := nil.
 	ptm := nil.
 	ptm2 := nil.
-	Smalltalk garbageCollect.
+	"Smalltalk garbageCollect."
+	"--- Not necesary ; GC runs periodically --"
