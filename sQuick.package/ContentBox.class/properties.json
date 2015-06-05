@@ -1,0 +1,18 @@
+{
+	"category" : "sQuick-UI",
+	"classinstvars" : [
+		"instance" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"box",
+		"fileName",
+		"headerImg",
+		"fileContent",
+		"viewBlock" ],
+	"name" : "ContentBox",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
