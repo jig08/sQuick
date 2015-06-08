@@ -3,7 +3,7 @@ initialize
 
 	| font resourceFolder |
 	resourceFolder := FileSystem workingDirectory / 'sQuick' / 'resources'.
-	font := LogicalFont familyName: 'WenQuanYi Micro Hei' pointSize: 20.
+	font := LogicalFont familyName: 'WenQuanYi Micro Hei' pointSize: 4.
 	
 	StandardFonts listFont: font .
 	StandardFonts menuFont: font.

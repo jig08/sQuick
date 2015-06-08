@@ -4,7 +4,7 @@
 		"instance" ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"instvars" : [
 		"title",
 		"header",
@@ -23,7 +23,10 @@
 		"txtViewer2",
 		"updateBtn",
 		"box",
-		"contentBox" ],
+		"contentBox",
+		"helpBtn",
+		"aboutBtn",
+		"feedBtn" ],
 	"name" : "MainInterface",
 	"pools" : [
 		 ],
