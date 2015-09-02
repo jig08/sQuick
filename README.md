@@ -1,6 +1,6 @@
 # sQuick
 
-### Refer [sQuick_new](https://github.com/jig08/sQuick_new) for the latest code. 
+### Refer [sQuick_new](https://github.com/jig08/sQuick_new) for the latest version. 
 
 ![Oops](https://github.com/jig08/sQuick/blob/master/resources/header.gif)
 
